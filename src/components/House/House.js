@@ -9,7 +9,7 @@ export default function House(props){
             </div>
             <div className="addressItems">Address: {props.address}</div>
             <div className="addressItems">City: {props.city}</div>
-            <div className="addressItems">State: {props.state}</div>
+            <div className="addressItems">State: {props.property_state}</div>
             <div className="addressItems">Zip: {props.zip}</div>
            </div>
 }

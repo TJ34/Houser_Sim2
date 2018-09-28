@@ -6,9 +6,9 @@ module.exports = {
         })
     },
     addHouse(req,res){
-        const {house_name, address, city, state, zip} = req.body;
+        const {house_name, address, city, property_state, zip} = req.body;
         let db = req.app.get('db');
-        db.add_house([house_name, address, city, state, zip]).then(
+        db.add_house([house_name, address, city, property_state, zip]).then(
             houses => {return res.status(200).json(houses)}
         )
     },
@@ -18,5 +18,11 @@ module.exports = {
             return res.status(200).json(houses)
         })
     },
-     
+    updateHouse(req,res){
+        const{house_name} = req.body;
+        const{id}=req.params;
+        let db = req.app.get('db');
+        db.update_house([id,house_name]).then(houses => res.status(200).json(houses));
+
+    } 
 }

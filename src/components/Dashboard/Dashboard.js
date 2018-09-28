@@ -34,7 +34,7 @@ export default class Wizard extends Component {
                         house_name={house.house_name}
                         address={house.address}
                         city={house.city}
-                        state={house.state}
+                        state={house.property_state}
                         zip={house.zip}
                         id={house.id}
                         deleteHouse={this.deleteHouse}    
