@@ -1,0 +1,22 @@
+.header {
+    height: 10vh;
+    width: 100%;
+    background-color: #519872;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo {
+    height: 5vh;
+    width: 5vh;
+    background-color: white;
+    margin: 1vw;
+}
+
+.headerName {
+    font-weight: bold;
+    margin-right: 50vw;
+    font-size: 4vh;
+}

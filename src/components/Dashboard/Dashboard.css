@@ -1,0 +1,51 @@
+.dashboard {
+    display: flex;
+    justify-content: center;
+    height: auto;
+}
+
+.centerDash {
+    background-color: #E5F4EC;
+    height: auto;
+    width: 60vw;
+}
+
+.wordLink {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 12vh;
+    border-bottom: 1px solid black;
+    margin: 10px;
+    font-size: 8vh;
+    color: #3B5249;
+}
+
+.newButton {
+    height: 7vh;
+    width: 15vw;
+    background-color: #8AEA92;
+    font-size: 3vh;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.allListings {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.mapListings {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.homeListings {
+    width: 90%;
+    text-align: left;
+    font-size: 3vh;
+    font-weight: bold;
+    margin-left: 25px;
+}
