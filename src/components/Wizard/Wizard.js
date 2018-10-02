@@ -10,15 +10,17 @@ export default class Wizard extends Component {
     render(){
         return(
         <div className="centerDiv">
-        <div className="wizard">
-            <p>Add New Listing</p>
-            <Link to="/"><button>Cancel</button></Link> 
+            <div className="wizard">
+              <div className="addHeader">
+                <p>Add New Listing</p>
+                <Link to="/"><button className="cancelButton">Cancel</button></Link>
+              </div>
             <Switch>
                 <Route exact path='/wizard' component={Step1}/>
                 <Route path= '/wizard/Step2' component={Step2}/>
                 <Route path= '/wizard/Step3' component={Step3}/>
             </Switch>
-        </div>
+        </div> 
         </div> 
         )
     }

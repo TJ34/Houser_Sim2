@@ -10,11 +10,136 @@
     width: 60vw;
 }
 
-.wordsButton {
+.addHeader {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 95%;
-    height:  10vh;
-    padding: 0 20px;
+    height: 10vh;
+    font-size: 5vh;
+    font-weight: bold;
+    margin: 0 2vw;
+}
+
+.cancelButton {
+    height: 5vh;
+    width: 10vh;
+    background-color: #FEC2C2;
+    font-weight: bold;
+    font-size: 2vh;
+}
+
+.titles {
+    font-weight: bold;
+}
+
+.allInputs {
+    margin: 3vh 5vw 3vh 10vw;
+}
+
+.propertyInput {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 5vh;
+}
+
+.input1 {
+    width: 120px;
+    border: 1px solid #519872;
+}
+
+.input2 {
+    width: 40vw;
+    border: 1px solid #519872;
+}
+
+.inputCSZ {
+    border: 1px solid #519872;
+}
+
+.cityStateZip {
+    display: flex;
+
+}
+.csz {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-right: 20px;
+}
+
+.next1 {
+    height: 42vh;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+}
+
+.nextButton {
+    height: 6vh;
+    width: 14vh;
+    background-color: #3B5249;
+    color: white;
+    font-size: 15px;
+}
+
+.imgInput {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin: 50px 100px;
+}
+
+.input3 {
+    width: 70%;
+    border: 1px solid #519872;
+}
+
+.step2Links {
+    height: 50vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin: 0 50px;
+}
+
+.buttons {
+    height: 6vh;
+    width: 14vh;
+    background-color: #3B5249;
+    color: white;
+    font-size: 15px;
+}
+
+.mortRent {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin: 15px 100px;
+}
+
+.prevComplete {
+    height: 50vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    padding: 0 50px;
+}
+
+.previous {
+    height: 6vh;
+    width: 19vh;
+    font-size: 15px;
+    color: white;
+    background-color: #3B5249;
+}
+
+.complete {
+    height: 6vh;
+    width: 14vh;
+    font-size: 15px;
+    background-color: #8AEA92;
 }

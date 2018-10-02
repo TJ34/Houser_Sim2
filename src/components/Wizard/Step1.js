@@ -8,28 +8,32 @@ class Step1 extends Component {
     render(){
         console.log(this.props);
         return(
-        <div>
-            <div>
-                <p>Property Name</p>
-                <input onChange={(e) => this.props.updateHouseName(e.target.value)}/>
-                <p>Address</p>
-                <input onChange={(e) => this.props.updateAddress(e.target.value)}/>
-                <div>
-                    <div>
-                        <p>City</p>
-                        <input onChange={(e) => this.props.updateCity(e.target.value)}/>
-                    </div>
-                    <div>
-                        <p>State</p>
-                        <input onChange={(e) => this.props.updateState(e.target.value)}/>
-                    </div>
-                    <div>
-                        <p>Zip</p>
-                        <input onChange={(e) => this.props.updateZip(e.target.value)}/>
-                    </div>
+        <div className="allInputs">
+                <div className="propertyInput">
+                    <p className="titles">Property Name</p>
+                    <input onChange={(e) => this.props.updateHouseName(e.target.value)} value={this.props.house_name} className="input1"/>
                 </div>
-                <Link to='/wizard/Step2'><button>Next Step</button></Link>
-            </div>
+                <div className="propertyInput">
+                    <p className="titles">Address</p>
+                    <input onChange={(e) => this.props.updateAddress(e.target.value)} value={this.props.address} className="input2"/>
+                </div>
+                <div className="cityStateZip">
+                  <div className="csz">
+                    <p className="titles">City</p>
+                    <input onChange={(e) => this.props.updateCity(e.target.value)} value = {this.props.city} className="inputCSZ"/>
+                  </div>
+                  <div className="csz">  
+                    <p className="titles">State</p>
+                    <input onChange={(e) => this.props.updateState(e.target.value)} value={this.props.property_state} className="inputCSZ"/>
+                  </div>
+                  <div className="csz">
+                    <p className="titles">Zip</p>
+                    <input onChange={(e) => this.props.updateZip(e.target.value)} value={this.props.zip} className="inputCSZ"/>
+                  </div>  
+                </div>
+                <div className="next1">
+                    <Link to='/wizard/Step2'><button className="nextButton">Next Step</button></Link>
+                </div>
         </div> 
         )
     }

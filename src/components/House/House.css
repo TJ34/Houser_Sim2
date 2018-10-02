@@ -1,19 +1,42 @@
 .listing {
     background-color: #DEDEDE;
     height: 25vh;
-    width: 90%;
+    width: 95%;
     margin: 10px;
     display: flex;
-    flex-direction: column;
     justify-content: space-around;
+    align-items: center;
     padding: 10px;
 }
 
-.propDelete {
-    display: flex;
-    justify-content: space-between;
+.image {
+    height: 23vh;
+    width: 15vw;
 }
 
 .addressItems {
     text-align: left;
+    line-height: 5vh;
+}
+
+.mortgageRent {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    text-align: left;
+    height: 25vh;
+    line-height: 5vh;
+}
+
+.propDelete {
+    display: flex;
+    background-color: #DEDEDE;
+    height: 25vh;
+    width: 5vh;
+}
+
+.deleteButton {
+    height: 5vh;
+    width: 5vh;
 }

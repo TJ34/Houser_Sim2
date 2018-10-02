@@ -6,9 +6,10 @@ module.exports = {
         })
     },
     addHouse(req,res){
-        const {house_name, address, city, property_state, zip} = req.body;
+        const {house_name, address, city, property_state, zip, img, mortgage, rent} = req.body;
         let db = req.app.get('db');
-        db.add_house([house_name, address, city, property_state, zip]).then(
+        console.log(req.body);
+        db.add_house([house_name, address, city, property_state, zip, img, mortgage, rent]).then(
             houses => {return res.status(200).json(houses)}
         )
     },

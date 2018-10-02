@@ -2,44 +2,52 @@ import React, {Component} from 'react';
 import {Link} from 'react-router-dom';
 import './Wizard.css';
 import axios from 'axios';
+import {connect} from 'react-redux';
+import {updateMortgage, updateRent} from '../../ducks/reducer';
 
-export default class Wizard extends Component {
-    constructor(){
-        super();
-
-        this.state = {
-            mortgage: 0,
-            rent: 0
-        }
-    }
-
-    mtgChange = (val) => {
-        this.setState({mortgage: val})
-    }
-    rentChange = (val) => {
-        this.setState({rent: val})
-    }
+class Step3 extends Component {
    
-    postHouse = (house_name, address, city, state, zip) => {
-        axios.post('/api/house', {house_name, address, city, state, zip});
+    postHouse = (house_name, address, city, property_state, zip, img, mortgage, rent) => {
+        axios.post('/api/house', {house_name, address, city, property_state, zip, img, mortgage, rent}).then(axios.get('/api/houses')
+        );
     }
 
     render(){
-        const {house_name, address, city, state, zip} = this.state;
+        const {house_name, address, city, property_state, zip,img, mortgage, rent} = this.props;
         return(
         <div>
-            <p>Recommended Rent: {this.state.rent*1.25}</p>
-            <div>
-                <p>Monthly Mortgage Amount</p>
-                <input onChange={(e) => this.mtgChange(e.target.value)}/>
-                <p>Desired Monthly Rent</p>
-                <input onChange={(e) => this.rentChange(e.target.value)}/>
+            <p className="titles">Recommended Rent: ${this.props.mortgage*1.25}</p>
+            <div className="mortRent">
+                <p className="titles">Monthly Mortgage Amount</p>
+                <input onChange={(e) => this.props.updateMortgage(e.target.value)} className="input3"/>
             </div>
-            <div>
-                <Link to='/wizard/Step2'><button>Previous Step</button></Link>
-                <Link to="/"><button onClick={() => this.postHouse(house_name, address, city, state, zip)}>Complete</button></Link>
+            <div className="mortRent">
+                <p className="titles">Desired Monthly Rent</p>
+                <input onChange={(e) => this.props.updateRent(e.target.value)} className="input3"/>
+            </div>
+            <div className="prevComplete">
+                <Link to='/wizard/Step2'><button className="previous">Previous Step</button></Link>
+                <Link to="/"><button onClick={() => this.postHouse(house_name, address, city, property_state, zip, img, mortgage, rent)} className="complete">Complete</button></Link>
             </div>
         </div> 
         )
     }
 }
+function mapStateToProps(state){
+    const{mortgage, rent} = state;
+
+    return {
+        mortgage,
+        rent,
+        house_name: state.house_name,
+        address: state.address,
+        city: state.city,
+        property_state: state.property_state,
+        zip: state.zip,
+        img: state.img,
+        mortgage: state.mortgage,
+        rent: state.rent
+    }
+}
+
+export default connect(mapStateToProps,{updateMortgage, updateRent})(Step3);

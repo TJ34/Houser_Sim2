@@ -3,7 +3,7 @@ const initialState = {
     address: '',
     city: '',
     proerty_state: '',
-    zip: '',
+    zip: 0,
     img: '',
     mortgage: 0,
     rent: 0
